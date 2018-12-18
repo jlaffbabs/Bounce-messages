@@ -8,14 +8,14 @@
     <img src="https://media.giphy.com/media/LpALgGQNZLzdm/giphy.gif" alt="Bouncy" height="300">
     <% @message_history.reverse.each do |message| %>
     <div>
-      <%= message[:message] %> <%= message[:time] %>
+      <%= message.abbreviate %> <%= message.time %>
     </div>
       <%end%>
 
     <p>
     <form action="/send_message" method="post">
       <label for="message">Enter your message:</label>
-      <input type="text" name="message" id = "banana">
+      <input type="text" name="message" >
       <input type="submit" value="Send">
     </form>
     </p>

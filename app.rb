@@ -1,7 +1,26 @@
 require 'sinatra/base'
+require './lib/message'
 
 class Bounce < Sinatra::Base
   enable :sessions
+
+
+
+  # get '/' do
+  #   session[:messages] ||= []
+  #   @messages = session[:messages]
+  #   erb(:index)
+  # end
+
+  # post '/message' do
+  #   message = Message.new(params[:content])
+  #   session[:messages] << message
+
+  #   redirect '/'
+  # end
+
+
+
 
   before do
     session[:history] == nil ? session[:history] = [] : session[:history]
@@ -9,13 +28,12 @@ class Bounce < Sinatra::Base
 
   get '/' do
     @message_history = session[:history]
-    @message_history << {:message => session[:message], :time => session[:time]}
     erb(:index)
   end
 
   post '/send_message' do
-    session[:message] = params[:message]
-    session[:time] = Time.new
+    message = Message.new(params[:message])
+    session[:history] << message
     redirect '/'
   end
 
