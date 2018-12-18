@@ -9,12 +9,13 @@ class Bounce < Sinatra::Base
 
   get '/' do
     @message_history = session[:history]
-    @message_history << session[:message]
+    @message_history << {:message => session[:message], :time => session[:time]}
     erb(:index)
   end
 
   post '/send_message' do
     session[:message] = params[:message]
+    session[:time] = Time.new
     redirect '/'
   end
 

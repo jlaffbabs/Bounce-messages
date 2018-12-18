@@ -18,4 +18,9 @@ feature 'Messages' do
     expect(page).to have_content "Hello, world"
     expect(page).to have_content "Hello, again!"
   end
+
+  scenario 'Shows time of all messages sent this session' do
+    send_message
+    expect(page).to have_content Time.new
+  end
 end
