@@ -22,4 +22,11 @@ feature 'Messages' do
     send_message
     expect(page).to have_content Time.new
   end
+
+  # scenario 'Expect messages to be no more than 20 chars' do
+  #   visit '/'
+  #   fill_in :message, with: "Purposefully really "
+  #   click_button 'Send'
+  #   expect(find('#banana').length).to eq(20)
+  # end
 end
