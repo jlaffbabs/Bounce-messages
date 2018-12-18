@@ -2,7 +2,7 @@
 <img src="https://media.giphy.com/media/LpALgGQNZLzdm/giphy.gif" alt="Bouncy" height="300">
 
 
-<p> <%= @message_history.each { |message| p message.to_s }%> </p>
+<p> <%= @message_history %> </p>
 
 <p>
 <form action="/send_message" method="post">
