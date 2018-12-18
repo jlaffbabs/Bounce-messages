@@ -1,4 +1,4 @@
-require 'app'
+
 
 feature 'The Homepage' do
   scenario 'It says Bounce' do

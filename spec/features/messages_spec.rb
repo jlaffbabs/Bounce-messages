@@ -1,4 +1,3 @@
-require 'app'
 
 feature 'Messages' do
   scenario 'User can send a message' do
