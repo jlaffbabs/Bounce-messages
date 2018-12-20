@@ -1,13 +1,13 @@
-class Message 
+require 'data_mapper'
+class Message
+  include DataMapper::Resource
 
-  attr_reader :content, :time
-  def initialize(content)
-    @content = content 
-    @time = Time.new
-  end
-  
+  property :id,  Serial
+  property :content, Text
+  property :created_at, DateTime
+
   def abbreviate
-    @content[0..19]
+    content[0..19]
   end
 
 end

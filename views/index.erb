@@ -6,16 +6,16 @@
   </head>
   <body><h1>Welcome to Bounce</h1>
     <img src="https://media.giphy.com/media/LpALgGQNZLzdm/giphy.gif" alt="Bouncy" height="300">
-    <% @message_history.reverse.each do |message| %>
+    <%@messages.reverse.each do |message|%>
     <div>
-      <%= message.abbreviate %> <%= message.time %>
+      <%=message.created_at.strftime('%d-%m-%Y %H:%M:%S')%> ===> <%=message.abbreviate%>
     </div>
       <%end%>
 
     <p>
     <form action="/send_message" method="post">
       <label for="message">Enter your message:</label>
-      <input type="text" name="message" >
+      <input type="text" name="content" >
       <input type="submit" value="Send">
     </form>
     </p>

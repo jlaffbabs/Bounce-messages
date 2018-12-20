@@ -12,7 +12,7 @@ feature 'Messages' do
 
   scenario 'Shows history of all messages sent this session' do
     send_message
-    fill_in :message, with: "Hello, again!"
+    fill_in :content, with: "Hello, again!"
     click_button 'Send'
     expect(page).to have_content "Hello, world"
     expect(page).to have_content "Hello, again!"
@@ -20,14 +20,14 @@ feature 'Messages' do
 
   scenario 'Shows time of all messages sent this session' do
     send_message
-    expect(page).to have_content Time.new
+    expect(page).to have_content Time.new.strftime('%d-%m-%Y %H:%M:%S')
   end
 
   scenario 'Expect messages to be no more than 20 chars' do
     visit '/'
-    fill_in :message, with: "Purposefully really long message"
+    fill_in :content, with: "Purposefully reallyy long message"
     click_button 'Send'
-    expect(page).to have_content "Purposefully really "
+    expect(page).to have_content "Purposefully reallyy"
     expect(page).not_to have_content "Purposefully really long message"
   end
 end
