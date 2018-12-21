@@ -30,4 +30,12 @@ feature 'Messages' do
     expect(page).to have_content "Purposefully reallyy"
     expect(page).not_to have_content "Purposefully really long message"
   end
+
+  scenario 'Expect messages to be clickable' do
+    visit '/'
+    fill_in :content, with: "Purposefully quitely long message"
+    click_button 'Send'
+    click_link 'Purposefully quitely'
+    expect(page).to have_content 'Purposefully quitely long message'
+  end
 end

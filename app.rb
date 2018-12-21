@@ -21,6 +21,11 @@ class Bounce < Sinatra::Base
     redirect '/'
   end
 
+  get '/message/:id' do
+    @message = Message.get(params[:id])
+    erb(:message)
+  end
+
   run! if app_file == $0
 
 end
