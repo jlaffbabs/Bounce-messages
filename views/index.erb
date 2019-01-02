@@ -8,7 +8,7 @@
     <img src="https://media.giphy.com/media/LpALgGQNZLzdm/giphy.gif" alt="Bouncy" height="300">
     <%@messages.reverse.each do |message|%>
     <div>
-      <%=message.created_at.strftime('%d-%m-%Y %H:%M:%S')%> ===> <a href="/message/<%=message.id%>"><%=message.abbreviate%></a>
+      <%=message.created_at.strftime('%d-%m-%Y %H:%M:%S')%> ==> <a href="/message/<%=message.id%>"><%=message.abbreviate%></a>
     </div>
       <%end%>
 

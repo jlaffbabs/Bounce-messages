@@ -1,16 +1,14 @@
-ENV["RACK_ENV"] ||= "development"
+# frozen_string_literal: true
+
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require './lib/message'
 require './config/data_mapper.rb'
 require 'pry'
 
+# Runs Bounce Messaging App
 class Bounce < Sinatra::Base
-
-  # before do
-  #   session[:history] == nil ? session[:history] = [] : session[:history]
-  # end
-
   get '/' do
     @messages = Message.all
     erb(:index)
@@ -26,6 +24,7 @@ class Bounce < Sinatra::Base
     erb(:message)
   end
 
+  # rubocop:disable Style/SpecialGlobalVars
   run! if app_file == $0
-
+  # rubocop:enable Style/SpecialGlobalVars
 end
