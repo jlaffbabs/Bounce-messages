@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require 'data_mapper'
 
-# Messaging Methods
 class Message
   include DataMapper::Resource
 

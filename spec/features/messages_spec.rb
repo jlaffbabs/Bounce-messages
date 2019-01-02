@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'Messages' do
   scenario 'User can send a message' do
     send_message

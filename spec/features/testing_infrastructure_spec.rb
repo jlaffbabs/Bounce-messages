@@ -1,7 +1,3 @@
-
-
-# frozen_string_literal: true
-
 feature 'The Homepage' do
   scenario 'It says Bounce' do
     visit '/'

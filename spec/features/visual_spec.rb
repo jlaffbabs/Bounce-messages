@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'Visual' do
   scenario 'Has a fun gif of a bouncy ball' do
     visit '/'
