@@ -10,7 +10,7 @@ feature 'Messages' do
     click_button 'Edit Message'
     fill_in :edit, with: "Something"
     click_button 'Submit'
-    expect(page.current_path).to eq "message/#{message.id}"
+    expect(page.current_path).to eq "/"
     expect(page).to have_content "Something"
   end
 end
