@@ -10,4 +10,8 @@ class Message
   def abbreviate
     content[0..19]
   end
+
+  def time
+    created_at.strftime('%d-%m-%Y %H:%M:%S')
+  end
 end

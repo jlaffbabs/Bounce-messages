@@ -21,5 +21,12 @@ class Bounce < Sinatra::Base
     erb(:message)
   end
 
+  get 'edit_message/:id' do
+    "Hello world"
+    #@message = Message.get(params[:id])
+    #erb(:edit)
+  end
+
+
   run! if app_file == $0
 end

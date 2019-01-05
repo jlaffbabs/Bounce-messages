@@ -7,6 +7,16 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/jacqueslaffy/Desktop/Projects/bounce-messages/spec/features/testing_infrastructure_spec.rb": [
@@ -59,6 +69,6 @@
         null
       ]
     },
-    "timestamp": 1546619442
+    "timestamp": 1546708699
   }
 }

@@ -6,16 +6,16 @@
   </head>
   <body><h1>Welcome to Bounce</h1>
     <img src="https://media.giphy.com/media/LpALgGQNZLzdm/giphy.gif" alt="Bouncy" height="300">
+
     <div>
-      <%=@message.content%>
-      <br>
-      <br>
-      <%=@message.time%>
-      <br>
+      <form action="/edit_message/<%=@message.id%>" method="post">
+        <textarea name="edit" cols="50" rows="5">
+          <%=@message.text%>
+        </textarea>
+        <input type="submit" value="Submit">
+      </form>
     </div>
-    <p>
-    <form action="/edit_message/<%=@message.id%>" method="get">
-      <input type="submit" value="Edit Message"/>
-    </form>
   </body>
 </html>
+
+       
