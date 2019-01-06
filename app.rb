@@ -32,5 +32,11 @@ class Bounce < Sinatra::Base
     redirect '/'
   end
 
+  post '/delete_message/:id' do
+    message = Message.get(params[:id])
+    message.destroy
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
